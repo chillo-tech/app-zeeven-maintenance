@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app-zeeven-maintenance:
+    container_name: app-zeeven-maintenance
+    # The official v2 Traefik docker image
+    image: simachille/app-zeeven-maintenance:latest
+    restart: always
+    ports:
+      # The HTTP port
+      - "82:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - applications-network
+networks:
+  applications-network:
+    external: true
+    name: applications-network
