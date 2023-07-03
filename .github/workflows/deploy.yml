@@ -20,6 +20,7 @@ jobs:
           script: |
             sudo mkdir -p /opt/applications/zeeven/app-zeeven-maintenance
             sudo chmod ugo+rwx /opt/applications/zeeven/app-zeeven-maintenance
+            sudo docker network create applications-network
 
   copy-configs:
     name: 'copy configs'
